@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Soumya's Makeover by Sunita Sahu – Professional Makeup Artist & Beauty Salon in Mauranipur. Bridal Makeup, HD Makeup, Party Makeup & Beauty Services. Book Now!">
+    <meta name="keywords" content="bridal makeup, makeup artist, beauty salon, Mauranipur, Sunita Sahu, Soumya's Makeover, HD makeup, party makeup">
+    <title>Soumya's Makeover | Sunita Sahu – Professional Makeup Artist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        rosegold: '#B76E79',
+                        'rosegold-light': '#D4949C',
+                        'rosegold-dark': '#8E4F58',
+                        blush: '#F9E4E8',
+                        'blush-light': '#FDF2F4',
+                        champagne: '#E6C78B',
+                        'champagne-light': '#F0DCAA',
+                        ivory: '#FFFDF9',
+                        'deep-black': '#1A1A1A',
+                        'soft-black': '#2D2D2D',
+                    },
+                    fontFamily: {
+                        playfair: ['Playfair Display', 'serif'],
+                        cormorant: ['Cormorant Garamond', 'serif'],
+                        poppins: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Poppins', sans-serif; background: #FFFDF9; color: #1A1A1A; overflow-x: hidden; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #F9E4E8; }
+        ::-webkit-scrollbar-thumb { background: #B76E79; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #8E4F58; }
+
+        .shimmer {
+            background: linear-gradient(110deg, transparent 25%, rgba(255,255,255,0.4) 50%, transparent 75%);
+            background-size: 200% 100%;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+        @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
+        .particle {
+            position: absolute; border-radius: 50%; pointer-events: none;
+            animation: float-particle linear infinite;
+        }
+        @keyframes float-particle {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; } 90% { opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+        }
+
+        .fade-up { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .fade-left { opacity: 0; transform: translateX(-40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .fade-left.visible { opacity: 1; transform: translateX(0); }
+        .fade-right { opacity: 0; transform: translateX(40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .fade-right.visible { opacity: 1; transform: translateX(0); }
+        .scale-in { opacity: 0; transform: scale(0.9); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .scale-in.visible { opacity: 1; transform: scale(1); }
+
+        .glass { background: rgba(255, 253, 249, 0.7); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(183, 110, 121, 0.15); }
+        .glass-dark { background: rgba(26, 26, 26, 0.75); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(183, 110, 121, 0.2); }
+        .glass-pink { background: rgba(249, 228, 232, 0.5); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(183, 110, 121, 0.2); }
+
+        .btn-luxury {
+            position: relative; overflow: hidden;
+            background: linear-gradient(135deg, #B76E79, #D4949C);
+            color: white; padding: 14px 32px; border-radius: 50px;
+            font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 14px;
+            letter-spacing: 0.5px; border: none; cursor: pointer;
+            transition: all 0.4s ease; display: inline-flex; align-items: center; gap: 8px;
+            text-decoration: none;
+        }
+        .btn-luxury::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); transition: left 0.5s; }
+        .btn-luxury:hover::before { left: 100%; }
+        .btn-luxury:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(183, 110, 121, 0.4); color: white; }
+
+        .btn-outline-luxury {
+            position: relative; overflow: hidden; background: transparent;
+            color: #B76E79; padding: 14px 32px; border-radius: 50px;
+            font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 14px;
+            letter-spacing: 0.5px; border: 2px solid #B76E79; cursor: pointer;
+            transition: all 0.4s ease; display: inline-flex; align-items: center; gap: 8px;
+            text-decoration: none;
+        }
+        .btn-outline-luxury:hover { background: #B76E79; color: white; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(183, 110, 121, 0.3); }
+
+        .btn-champagne {
+            position: relative; overflow: hidden;
+            background: linear-gradient(135deg, #E6C78B, #F0DCAA);
+            color: #1A1A1A; padding: 14px 32px; border-radius: 50px;
+            font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 14px;
+            letter-spacing: 0.5px; border: none; cursor: pointer;
+            transition: all 0.4s ease; display: inline-flex; align-items: center; gap: 8px;
+            text-decoration: none;
+        }
+        .btn-champagne:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(230, 199, 139, 0.5); color: #1A1A1A; }
+
+        .service-card { transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+        .service-card:hover { transform: translateY(-10px); box-shadow: 0 25px 60px rgba(183, 110, 121, 0.2); }
+        .service-card:hover .service-icon { background: linear-gradient(135deg, #B76E79, #D4949C); color: white; transform: scale(1.1) rotate(5deg); }
+        .service-card:hover .service-line { width: 60px; background: #B76E79; }
+
+        .gallery-item { overflow: hidden; border-radius: 16px; cursor: pointer; position: relative; }
+        .gallery-item img { transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); width: 100%; height: 100%; object-fit: cover; }
+        .gallery-item:hover img { transform: scale(1.1); }
+        .gallery-item .overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,26,26,0.8) 0%, transparent 60%); opacity: 0; transition: opacity 0.4s ease; display: flex; align-items: flex-end; padding: 20px; }
+        .gallery-item:hover .overlay { opacity: 1; }
+
+        .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 9999; display: none; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.4s ease; }
+        .lightbox.active { display: flex; opacity: 1; }
+        .lightbox img { max-width: 90vw; max-height: 85vh; object-fit: contain; border-radius: 12px; box-shadow: 0 25px 80px rgba(0,0,0,0.5); transition: opacity 0.2s ease; }
+
+        .testimonial-track { display: flex; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+
+        .parallax-section { background-attachment: fixed; background-size: cover; background-position: center; }
+        @media (max-width: 768px) { .parallax-section { background-attachment: scroll; } }
+
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 50%; width: 0; height: 2px; background: #B76E79; transition: all 0.3s ease; transform: translateX(-50%); }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+        .luxury-divider { display: flex; align-items: center; gap: 16px; justify-content: center; }
+        .luxury-divider .line { width: 60px; height: 1px; background: linear-gradient(to right, transparent, #B76E79); }
+        .luxury-divider .line:last-child { background: linear-gradient(to left, transparent, #B76E79); }
+
+        .form-input {
+            width: 100%; padding: 14px 20px; border: 1px solid rgba(183, 110, 121, 0.2);
+            border-radius: 12px; font-family: 'Poppins', sans-serif; font-size: 14px;
+            background: rgba(255,253,249,0.8); transition: all 0.3s ease; outline: none; color: #1A1A1A;
+        }
+        .form-input:focus { border-color: #B76E79; box-shadow: 0 0 0 4px rgba(183, 110, 121, 0.1); }
+        .form-input::placeholder { color: #999; }
+
+        .mobile-menu { transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .mobile-menu.open { transform: translateX(0); }
+
+        .star-float { animation: starFloat 3s ease-in-out infinite; }
+        @keyframes starFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+
+        .pulse-ring { position: relative; }
+        .pulse-ring::before { content: ''; position: absolute; inset: -4px; border-radius: 50%; border: 2px solid #B76E79; animation: pulseRing 2s ease-out infinite; }
+        @keyframes pulseRing { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(1.5); opacity: 0; } }
+
+        .toast {
+            position: fixed; bottom: 30px; right: 30px; padding: 16px 28px; border-radius: 12px;
+            color: white; font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 500;
+            z-index: 10000; transform: translateY(100px); opacity: 0; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .toast.show { transform: translateY(0); opacity: 1; }
+        .toast.success { background: linear-gradient(135deg, #B76E79, #D4949C); }
+        .toast.error { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+
+        .why-card { transition: all 0.4s ease; }
+        .why-card:hover { transform: translateY(-5px); background: rgba(183, 110, 121, 0.08); }
+        .why-card:hover .why-icon { color: #B76E79; transform: scale(1.15); }
+
+        .counter-glow { text-shadow: 0 0 40px rgba(183, 110, 121, 0.3); }
+        ::selection { background: rgba(183, 110, 121, 0.3); color: #1A1A1A; }
+
+        /* Bridal Showcase Strip */
+        .bridal-strip {
+            display: flex; gap: 0;
+            animation: scrollStrip 30s linear infinite;
+        }
+        .bridal-strip:hover { animation-play-state: paused; }
+        @keyframes scrollStrip {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Hero image Ken Burns */
+        .hero-img {
+            animation: kenBurns 20s ease-in-out infinite alternate;
+        }
+        @keyframes kenBurns {
+            0% { transform: scale(1) translate(0, 0); }
+            100% { transform: scale(1.08) translate(-1%, -1%); }
+        }
+    </style>
+</head>
+<body>
+
+<div id="particles" class="fixed inset-0 pointer-events-none z-0" aria-hidden="true"></div>
+
+<!-- Navigation -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-rosegold to-champagne flex items-center justify-center text-white font-playfair font-bold text-lg group-hover:scale-110 transition-transform duration-300">S</div>
+                <div>
+                    <div class="font-playfair text-lg font-semibold leading-tight text-deep-black">Soumya's Makeover</div>
+                    <div class="font-cormorant text-xs text-rosegold tracking-wider">BY SUNITA SAHU</div>
+                </div>
+            </a>
+            <div class="hidden lg:flex items-center gap-8">
+                <a href="#home" class="nav-link font-poppins text-sm font-medium text-soft-black hover:text-rosegold transition-colors">Home</a>
+                <a href="#about" class="nav-link font-poppins text-sm font-medium text-soft-black hover:text-rosegold transition-colors">About</a>
+                <a href="#services" class="nav-link font-poppins text-sm font-medium text-soft-black hover:text-rosegold transition-colors">Services</a>
+                <a href="#portfolio" class="nav-link font-poppins text-sm font-medium text-soft-black hover:text-rosegold transition-colors">Portfolio</a>
+                <a href="#testimonials" class="nav-link font-poppins text-sm font-medium text-soft-black hover:text-rosegold transition-colors">Reviews</a>
+                <a href="#contact" class="nav-link font-poppins text-sm font-medium text-soft-black hover:text-rosegold transition-colors">Contact</a>
+                <a href="#booking" class="btn-luxury text-xs px-6 py-3">Book Now</a>
+            </div>
+            <button id="menuBtn" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Open menu">
+                <span class="w-6 h-0.5 bg-deep-black transition-all duration-300 origin-center" id="bar1"></span>
+                <span class="w-6 h-0.5 bg-deep-black transition-all duration-300" id="bar2"></span>
+                <span class="w-4 h-0.5 bg-deep-black transition-all duration-300 origin-center" id="bar3"></span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="mobile-menu fixed top-0 right-0 w-80 h-full bg-ivory z-50 shadow-2xl">
+    <div class="p-6">
+        <div class="flex justify-between items-center mb-10">
+            <div>
+                <div class="font-playfair text-lg font-semibold text-deep-black">Soumya's Makeover</div>
+                <div class="font-cormorant text-xs text-rosegold tracking-wider">BY SUNITA SAHU</div>
+            </div>
+            <button id="closeMenu" class="w-10 h-10 rounded-full border border-rosegold/20 flex items-center justify-center text-rosegold hover:bg-rosegold hover:text-white transition-all" aria-label="Close menu">
+                <iconify-icon icon="lucide:x" width="18"></iconify-icon>
+            </button>
+        </div>
+        <div class="flex flex-col gap-1">
+            <a href="#home" class="mobile-link font-poppins text-sm font-medium text-soft-black py-3 px-4 rounded-xl hover:bg-blush transition-all">Home</a>
+            <a href="#about" class="mobile-link font-poppins text-sm font-medium text-soft-black py-3 px-4 rounded-xl hover:bg-blush transition-all">About</a>
+            <a href="#services" class="mobile-link font-poppins text-sm font-medium text-soft-black py-3 px-4 rounded-xl hover:bg-blush transition-all">Services</a>
+            <a href="#portfolio" class="mobile-link font-poppins text-sm font-medium text-soft-black py-3 px-4 rounded-xl hover:bg-blush transition-all">Portfolio</a>
+            <a href="#testimonials" class="mobile-link font-poppins text-sm font-medium text-soft-black py-3 px-4 rounded-xl hover:bg-blush transition-all">Reviews</a>
+            <a href="#contact" class="mobile-link font-poppins text-sm font-medium text-soft-black py-3 px-4 rounded-xl hover:bg-blush transition-all">Contact</a>
+        </div>
+        <div class="mt-8 flex flex-col gap-3">
+            <a href="#booking" class="btn-luxury justify-center text-sm">Book Appointment</a>
+            <a href="tel:+919984151516" class="btn-outline-luxury justify-center text-sm">
+                <iconify-icon icon="lucide:phone" width="16"></iconify-icon> Call Now
+            </a>
+        </div>
+        <div class="mt-8 flex gap-3">
+            <a href="#" class="w-10 h-10 rounded-full border border-rosegold/20 flex items-center justify-center text-rosegold hover:bg-rosegold hover:text-white transition-all" aria-label="Instagram"><iconify-icon icon="lucide:instagram" width="16"></iconify-icon></a>
+            <a href="#" class="w-10 h-10 rounded-full border border-rosegold/20 flex items-center justify-center text-rosegold hover:bg-rosegold hover:text-white transition-all" aria-label="Facebook"><iconify-icon icon="lucide:facebook" width="16"></iconify-icon></a>
+            <a href="https://wa.me/919984151516" class="w-10 h-10 rounded-full border border-rosegold/20 flex items-center justify-center text-rosegold hover:bg-green-500 hover:text-white hover:border-green-500 transition-all" aria-label="WhatsApp"><iconify-icon icon="lucide:message-circle" width="16"></iconify-icon></a>
+        </div>
+    </div>
+</div>
+<div id="menuOverlay" class="fixed inset-0 bg-black/30 z-40 hidden opacity-0 transition-opacity duration-300"></div>
+
+<!-- ==================== HERO SECTION ==================== -->
+<section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0">
+        <img src="https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=1920&q=80" alt="Beautiful Indian Bride in Red Lehenga with Traditional Makeup" class="w-full h-full object-cover hero-img">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40"></div>
+    </div>
+    <div class="absolute top-20 left-10 w-32 h-32 border border-champagne/20 rounded-full animate-pulse hidden lg:block" aria-hidden="true"></div>
+    <div class="absolute bottom-20 right-10 w-24 h-24 border border-rosegold/20 rounded-full animate-pulse hidden lg:block" aria-hidden="true"></div>
+    <div class="absolute top-1/3 right-1/4 w-2 h-2 bg-champagne rounded-full star-float" aria-hidden="true"></div>
+    <div class="absolute bottom-1/3 left-1/4 w-1.5 h-1.5 bg-rosegold-light rounded-full star-float" style="animation-delay: 1s" aria-hidden="true"></div>
+
+    <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+        <div class="fade-up inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-5 py-2 mb-8">
+            <div class="w-2 h-2 bg-champagne rounded-full pulse-ring"></div>
+            <span class="font-cormorant text-sm text-white/90 tracking-widest uppercase">Premium Beauty Studio</span>
+        </div>
+        <h1 class="fade-up font-playfair text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold text-white leading-[1.1] mb-6" style="transition-delay: 0.1s">
+            Transforming Beauty<br><span class="italic text-champagne">Into Art</span>
+        </h1>
+        <p class="fade-up font-cormorant text-lg sm:text-xl md:text-2xl text-white/80 max-w-2xl mx-auto mb-8 leading-relaxed" style="transition-delay: 0.2s">
+            Professional Bridal Makeup, Party Makeup & Beauty Services That Make You Shine.
+        </p>
+        <div class="fade-up flex items-center justify-center gap-3 mb-10" style="transition-delay: 0.3s">
+            <div class="flex gap-0.5">
+                <iconify-icon icon="lucide:star" width="16" class="text-champagne" style="filter: drop-shadow(0 0 4px rgba(230,199,139,0.5))"></iconify-icon>
+                <iconify-icon icon="lucide:star" width="16" class="text-champagne" style="filter: drop-shadow(0 0 4px rgba(230,199,139,0.5))"></iconify-icon>
+                <iconify-icon icon="lucide:star" width="16" class="text-champagne" style="filter: drop-shadow(0 0 4px rgba(230,199,139,0.5))"></iconify-icon>
+                <iconify-icon icon="lucide:star" width="16" class="text-champagne" style="filter: drop-shadow(0 0 4px rgba(230,199,139,0.5))"></iconify-icon>
+                <iconify-icon icon="lucide:star-half" width="16" class="text-champagne" style="filter: drop-shadow(0 0 4px rgba(230,199,139,0.5))"></iconify-icon>
+            </div>
+            <span class="font-poppins text-sm text-white/90 font-medium">4.7 Rating</span>
+            <span class="text-white/30">|</span>
+            <span class="font-poppins text-sm text-white/70">104+ Happy Reviews</span>
+        </div>
+        <div class="fade-up flex flex-wrap items-center justify-center gap-4" style="transition-delay: 0.4s">
+            <a href="#booking" class="btn-champagne"><iconify-icon icon="lucide:calendar" width="16"></iconify-icon> Book Appointment</a>
+            <a href="tel:+919984151516" class="btn-luxury"><iconify-icon icon="lucide:phone" width="16"></iconify-icon> Call Now</a>
+            <a href="https://wa.me/919984151516?text=Hi%20Sunita%20ji%2C%20I%20want%20to%20book%20a%20makeup%20appointment" target="_blank" class="btn-outline-luxury" style="border-color: rgba(255,255,255,0.3); color: white;">
+                <iconify-icon icon="lucide:message-circle" width="16"></iconify-icon> WhatsApp Us
+            </a>
+        </div>
+    </div>
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+        <span class="font-cormorant text-xs text-white/50 tracking-widest uppercase">Scroll</span>
+        <iconify-icon icon="lucide:chevron-down" width="20" class="text-white/50"></iconify-icon>
+    </div>
+</section>
+
+<!-- ==================== BRIDAL SHOWCASE STRIP ==================== -->
+<section class="py-4 bg-deep-black overflow-hidden" aria-label="Bridal showcase gallery">
+    <div class="bridal-strip" style="width: max-content;">
+        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=400&q=70" alt="Bridal Makeup" class="h-40 w-60 object-cover flex-shrink-0">
+        <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&q=70" alt="Bridal Beauty" class="h-40 w-60 object-cover flex-shrink-0">
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=400&q=70" alt="Indian Bride" class="h-40 w-60 object-cover flex-shrink-0">
+        <img src="https://images.unsplash.com/photo-1583089892943-e02e5b017b6a?w=400&q=70" alt="Bridal Look" class="h-40 w-60 object-cover flex-shrink-0">
+        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&q=70" alt="Makeup Artistry" class="h-40 w-60 object-cover flex-shrink-0">
+        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&q=70" alt="Bridal Portrait" class="h-40 w-60 object-cover flex-shrink-0">
+        <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=400&q=70" alt="Bride Portrait" class="h-40 w-60 object-cover flex-shrink-0">
+        <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=400&q=70" alt="Makeup Session" class="h-40 w-60 object-cover flex-shrink-0">
+        <!-- Duplicate for seamless loop -->
+        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=400&q=70" alt="Bridal Makeup" class="h-40 w-60 object-cover flex-shrink-0">
+        <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&q=70" alt="Bridal Beauty" class="h-40 w-60 object-cover flex-shrink-0">
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=400&q=70" alt="Indian Bride" class="h-40 w-60 object-cover flex-shrink-0">
+        <img src="https://images.unsplash.com/photo-1583089892943-e02e5b017b6a?w=400&q=70" alt="Bridal Look" class="h-40 w-60 object-cover flex-shrink-0">
+        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&q=70" alt="Makeup Artistry" class="h-40 w-60 object-cover flex-shrink-0">
+        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&q=70" alt="Bridal Portrait" class="h-40 w-60 object-cover flex-shrink-0">
+        <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=400&q=70" alt="Bride Portrait" class="h-40 w-60 object-cover flex-shrink-0">
+        <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=400&q=70" alt="Makeup Session" class="h-40 w-60 object-cover flex-shrink-0">
+    </div>
+</section>
+
+<!-- ==================== ABOUT SECTION ==================== -->
+<section id="about" class="py-24 lg:py-32 bg-ivory relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-blush/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" aria-hidden="true"></div>
+    <div class="absolute bottom-0 left-0 w-72 h-72 bg-champagne/10 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/2" aria-hidden="true"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div class="fade-left relative">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80" alt="Sunita Sahu - Professional Makeup Artist at Work" class="w-full max-w-md mx-auto rounded-2xl shadow-2xl object-cover h-[500px] lg:h-[600px]">
+                    <div class="absolute -bottom-6 -right-4 lg:-right-8 glass rounded-2xl p-5 shadow-xl">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-rosegold to-champagne flex items-center justify-center">
+                                <iconify-icon icon="lucide:award" width="20" class="text-white"></iconify-icon>
+                            </div>
+                            <div>
+                                <div class="font-playfair text-lg font-semibold text-deep-black">500+</div>
+                                <div class="font-poppins text-xs text-gray-500">Happy Clients</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -top-4 -left-4 w-full h-full border-2 border-rosegold/20 rounded-2xl -z-10 hidden lg:block"></div>
+                </div>
+            </div>
+            <div class="fade-right">
+                <div class="luxury-divider mb-6 justify-start">
+                    <div class="line"></div>
+                    <span class="font-cormorant text-sm text-rosegold tracking-[0.2em] uppercase">About Us</span>
+                    <div class="line" style="background: linear-gradient(to left, transparent, #B76E79)"></div>
+                </div>
+                <h2 class="font-playfair text-3xl sm:text-4xl lg:text-5xl font-semibold text-deep-black leading-tight mb-6">
+                    Meet <span class="italic text-rosegold">Sunita Sahu</span>,<br>Your Beauty Artist
+                </h2>
+                <p class="font-poppins text-sm text-gray-600 leading-relaxed mb-6">
+                    With years of experience in the beauty industry, Sunita Sahu has established herself as one of the most sought-after makeup artists in Mauranipur. Her passion for enhancing natural beauty and creating stunning transformations has earned her the trust of over 500 happy clients.
+                </p>
+                <p class="font-poppins text-sm text-gray-600 leading-relaxed mb-8">
+                    At Soumya's Makeover, we believe every woman deserves to feel like a queen. Using only premium beauty products and the latest techniques, we create customized looks that perfectly match your personality, outfit, and occasion. From traditional bridal makeup to glamorous party looks, we make every moment picture-perfect.
+                </p>
+                <div class="grid grid-cols-2 gap-4 mb-8">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-blush flex items-center justify-center flex-shrink-0"><iconify-icon icon="lucide:check" width="14" class="text-rosegold"></iconify-icon></div>
+                        <span class="font-poppins text-sm text-soft-black">Professional Artist</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-blush flex items-center justify-center flex-shrink-0"><iconify-icon icon="lucide:check" width="14" class="text-rosegold"></iconify-icon></div>
+                        <span class="font-poppins text-sm text-soft-black">Premium Products</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-blush flex items-center justify-center flex-shrink-0"><iconify-icon icon="lucide:check" width="14" class="text-rosegold"></iconify-icon></div>
+                        <span class="font-poppins text-sm text-soft-black">Customized Looks</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-blush flex items-center justify-center flex-shrink-0"><iconify-icon icon="lucide:check" width="14" class="text-rosegold"></iconify-icon></div>
+                        <span class="font-poppins text-sm text-soft-black">100% Satisfaction</span>
+                    </div>
+                </div>
+                <a href="#services" class="btn-luxury">Explore Services <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SERVICES SECTION ==================== -->
+<section id="services" class="py-24 lg:py-32 bg-blush-light relative overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blush/40 rounded-full blur-[120px]" aria-hidden="true"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16 fade-up">
+            <div class="luxury-divider mb-6">
+                <div class="line"></div>
+                <span class="font-cormorant text-sm text-rosegold tracking-[0.2em] uppercase">What We Offer</span>
+                <div class="line" style="background: linear-gradient(to left, transparent, #B76E79)"></div>
+            </div>
+            <h2 class="font-playfair text-3xl sm:text-4xl lg:text-5xl font-semibold text-deep-black mb-4">
+                Our Premium <span class="italic text-rosegold">Services</span>
+            </h2>
+            <p class="font-cormorant text-lg text-gray-500 max-w-xl mx-auto">Discover our range of expert beauty services designed to make you look and feel extraordinary.</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div class="service-card glass rounded-2xl p-6 text-center fade-up" style="transition-delay: 0.05s">
+                <div class="service-icon w-16 h-16 mx-auto mb-4 rounded-2xl bg-blush flex items-center justify-center text-rosegold transition-all duration-400"><iconify-icon icon="lucide:heart" width="28"></iconify-icon></div>
+                <h3 class="font-playfair text-lg font-semibold text-deep-black mb-2">Bridal Makeup</h3>
+                <div class="service-line w-8 h-0.5 bg-rosegold/30 mx-auto mb-3 transition-all duration-400"></div>
+                <p class="font-poppins text-xs text-gray-500 leading-relaxed">Complete bridal transformation with long-lasting, camera-ready perfection.</p>
+            </div>
+            <div class="service-card glass rounded-2xl p-6 text-center fade-up" style="transition-delay: 0.1s">
+                <div class="service-icon w-16 h-16 mx-auto mb-4 rounded-2xl bg-blush flex items-center justify-center text-rosegold transition-all duration-400"><iconify-icon icon="lucide:sparkles" width="28"></iconify-icon></div>
+                <h3 class="font-playfair text-lg font-semibold text-deep-black mb-2">HD Makeup</h3>
+                <div class="service-line w-8 h-0.5 bg-rosegold/30 mx-auto mb-3 transition-all duration-400"></div>
+                <p class="font-poppins text-xs text-gray-500 leading-relaxed">High-definition makeup for flawless, natural-looking skin in any light.</p>
+            </div>
+            <div class="service-card glass rounded-2xl p-6 text-center fade-up" style="transition-delay: 0.15s">
+                <div class="service-icon w-16 h-16 mx-auto mb-4 rounded-2xl bg-blush flex items-center justify-center text-rosegold transition-all duration-400"><iconify-icon icon="lucide:party-popper" width="28"></iconify-icon></div>
+                <h3 class="font-playfair text-lg font-semibold text-deep-black mb-2">Party Makeup</h3>
+                <div class="service-line w-8 h-0.5 bg-rosegold/30 mx-auto mb-3 transition-all duration-400"></div>
+                <p class="font-poppins text-xs text-gray-500 leading-relaxed">Glamorous party looks that make you the center of attention.</p>
+            </div>
+            <div class="service-card glass rounded-2xl p-6 text-center fade-up" style="transition-delay: 0.2s">
+                <div class="service-icon w-16 h-16 mx-auto mb-4 rounded-2xl bg-blush flex items-center justify-center text-rosegold transition-all duration-400"><iconify-icon icon="lucide:gem" width="28"></iconify-icon></div>
+                <h3 class="font-playfair text-lg font-semibold text-deep-black mb-2">Engagement Makeup</h3>
+                <div class="service-line w-8 h-0.5 bg-rosegold/30 mx-auto mb-3 transition-all duration-400"></div>
+                <p class="font-poppins text-xs text-gray-500 leading-relaxed">Elegant engagement looks that complement your ring and outfit.</p>
+            </div>
+            <div class="service-card glass rounded-2xl p-6 text-center fade-up" style="transition-delay: 0.25s">
+                <div class="service-icon w-16 h-16 mx-auto mb-4 rounded-2xl bg-blush flex items-center justify-center text-rosegold transition-all duration-400"><iconify-icon icon="lucide:crown" width="28"></iconify-icon></div>
+                <h3 class="font-playfair text-lg font-semibold text-deep-black mb-2">Reception Makeup</h3>
+                <div class="service-line w-8 h-0.5 bg-rosegold/30 mx-auto mb-3 transition-all duration-400"></div>
+                <p class="font-poppins text-xs text-gray-500 leading-relaxed">Stunning reception makeup for your grand celebration evening.</p>
+            </div>
+            <div class="service-card glass rounded-2xl p-6 text-center fade-up" style="transition-delay: 0.3s">
+                <div class="service-icon w-16 h-16 mx-auto mb-4 rounded-2xl bg-blush flex items-center justify-center text-rosegold transition-all duration-400"><iconify-icon icon="lucide:scissors" width="28"></iconify-icon></div>
+                <h3 class="font-playfair text-lg font-semibold text-deep-black mb-2">Hair Styling</h3>
+                <div class="service-line w-8 h-0.5 bg-rosegold/30 mx-auto mb-3 transition-all duration-400"></div>
+                <p class="font-poppins text-xs text-gray-500 leading-relaxed">Trendy and traditional hair styling for every occasion.</p>
+            </div>
+            <div class="service-card glass rounded-2xl p-6 text-center fade-up" style="transition-delay: 0.35s">
+                <div class="service-icon w-16 h-16 mx-auto mb-4 rounded-2xl bg-blush flex items-center justify-center text-rosegold transition-all duration-400"><iconify-icon icon="lucide:shirt" width="28"></iconify-icon></div>
+                <h3 class="font-playfair text-lg font-semibold text-deep-black mb-2">Saree Draping</h3>
+                <div class="service-line w-8 h-0.5 bg-rosegold/30 mx-auto mb-3 transition-all duration-400"></div>
+                <p class="font-poppins text-xs text-gray-500 leading-relaxed">Perfect saree draping styles — from traditional to modern.</p>
+            </div>
+            <div class="service-card glass rounded-2xl p-6 text-center fade-up" style="transition-delay: 0.4s">
+                <div class="service-icon w-16 h-16 mx-auto mb-4 rounded-2xl bg-blush flex items-center justify-center text-rosegold transition-all duration-400"><iconify-icon icon="lucide:flower-2" width="28"></iconify-icon></div>
+                <h3 class="font-playfair text-lg font-semibold text-deep-black mb-2">Beauty Treatments</h3>
+                <div class="service-line w-8 h-0.5 bg-rosegold/30 mx-auto mb-3 transition-all duration-400"></div>
+                <p class="font-poppins text-xs text-gray-500 leading-relaxed">Facials, cleanup, and skin treatments for radiant glow.</p>
+            </div>
+            <div class="service-card glass rounded-2xl p-6 text-center fade-up" style="transition-delay: 0.45s">
+                <div class="service-icon w-16 h-16 mx-auto mb-4 rounded-2xl bg-blush flex items-center justify-center text-rosegold transition-all duration-400"><iconify-icon icon="lucide:package" width="28"></iconify-icon></div>
+                <h3 class="font-playfair text-lg font-semibold text-deep-black mb-2">Pre-Bridal Packages</h3>
+                <div class="service-line w-8 h-0.5 bg-rosegold/30 mx-auto mb-3 transition-all duration-400"></div>
+                <p class="font-poppins text-xs text-gray-500 leading-relaxed">Complete pre-bridal care packages for your best look.</p>
+            </div>
+            <div class="service-card glass rounded-2xl p-6 text-center fade-up" style="transition-delay: 0.5s">
+                <div class="service-icon w-16 h-16 mx-auto mb-4 rounded-2xl bg-blush flex items-center justify-center text-rosegold transition-all duration-400"><iconify-icon icon="lucide:camera" width="28"></iconify-icon></div>
+                <h3 class="font-playfair text-lg font-semibold text-deep-black mb-2">Fashion Makeup</h3>
+                <div class="service-line w-8 h-0.5 bg-rosegold/30 mx-auto mb-3 transition-all duration-400"></div>
+                <p class="font-poppins text-xs text-gray-500 leading-relaxed">Editorial and fashion makeup for photoshoots & ramp.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== WHY CHOOSE US ==================== -->
+<section class="py-24 lg:py-32 bg-deep-black relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-80 h-80 bg-rosegold/5 rounded-full blur-[100px]" aria-hidden="true"></div>
+    <div class="absolute bottom-0 left-0 w-60 h-60 bg-champagne/5 rounded-full blur-[80px]" aria-hidden="true"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16 fade-up">
+            <div class="luxury-divider mb-6">
+                <div class="line" style="background: linear-gradient(to right, transparent, rgba(183,110,121,0.5))"></div>
+                <span class="font-cormorant text-sm text-rosegold tracking-[0.2em] uppercase">Why Choose Us</span>
+                <div class="line" style="background: linear-gradient(to left, transparent, rgba(183,110,121,0.5))"></div>
+            </div>
+            <h2 class="font-playfair text-3xl sm:text-4xl lg:text-5xl font-semibold text-white mb-4">The <span class="italic text-champagne">Soumya's</span> Difference</h2>
+            <p class="font-cormorant text-lg text-white/50 max-w-xl mx-auto">What makes us the most trusted beauty destination in Mauranipur.</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="why-card glass-dark rounded-2xl p-6 fade-up" style="transition-delay: 0.05s">
+                <div class="why-icon w-12 h-12 rounded-xl bg-rosegold/10 flex items-center justify-center text-rosegold mb-4 transition-all duration-300"><iconify-icon icon="lucide:badge-check" width="24"></iconify-icon></div>
+                <h3 class="font-playfair text-lg font-semibold text-white mb-2">Professional Makeup Artist</h3>
+                <p class="font-poppins text-xs text-white/50 leading-relaxed">Trained and experienced artist who understands your unique beauty needs.</p>
+            </div>
+            <div class="why-card glass-dark rounded-2xl p-6 fade-up" style="transition-delay: 0.1s">
+                <div class="why-icon w-12 h-12 rounded-xl bg-champagne/10 flex items-center justify-center text-champagne mb-4 transition-all duration-300"><iconify-icon icon="lucide:diamond" width="24"></iconify-icon></div>
+                <h3 class="font-playfair text-lg font-semibold text-white mb-2">Premium Beauty Products</h3>
+                <p class="font-poppins text-xs text-white/50 leading-relaxed">Only top-tier, skin-friendly brands used for every service.</p>
+            </div>
+            <div class="why-card glass-dark rounded-2xl p-6 fade-up" style="transition-delay: 0.15s">
+                <div class="why-icon w-12 h-12 rounded-xl bg-rosegold/10 flex items-center justify-center text-rosegold mb-4 transition-all duration-300"><iconify-icon icon="lucide:palette" width="24"></iconify-icon></div>
+                <h3 class="font-playfair text-lg font-semibold text-white mb-2">Customized Looks</h3>
+                <p class="font-poppins text-xs text-white/50 leading-relaxed">Every look is tailored to match your face, outfit, and personality.</p>
+            </div>
+            <div class="why-card glass-dark rounded-2xl p-6 fade-up" style="transition-delay: 0.2s">
+                <div class="why-icon w-12 h-12 rounded-xl bg-champagne/10 flex items-center justify-center text-champagne mb-4 transition-all duration-300"><iconify-icon icon="lucide:shield-check" width="24"></iconify-icon></div>
+                <h3 class="font-playfair text-lg font-semibold text-white mb-2">Hygienic Studio</h3>
+                <p class="font-poppins text-xs text-white/50 leading-relaxed">Clean, sanitized tools and a safe, comfortable environment.</p>
+            </div>
+            <div class="why-card glass-dark rounded-2xl p-6 fade-up" style="transition-delay: 0.25s">
+                <div class="why-icon w-12 h-12 rounded-xl bg-rosegold/10 flex items-center justify-center text-rosegold mb-4 transition-all duration-300"><iconify-icon icon="lucide:wallet" width="24"></iconify-icon></div>
+                <h3 class="font-playfair text-lg font-semibold text-white mb-2">Affordable Packages</h3>
+                <p class="font-poppins text-xs text-white/50 leading-relaxed">Premium quality services at prices that fit every budget.</p>
+            </div>
+            <div class="why-card glass-dark rounded-2xl p-6 fade-up" style="transition-delay: 0.3s">
+                <div class="why-icon w-12 h-12 rounded-xl bg-champagne/10 flex items-center justify-center text-champagne mb-4 transition-all duration-300"><iconify-icon icon="lucide:users" width="24"></iconify-icon></div>
+                <h3 class="font-playfair text-lg font-semibold text-white mb-2">Trusted by 100+ Clients</h3>
+                <p class="font-poppins text-xs text-white/50 leading-relaxed">A growing family of happy clients who trust us with their special days.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== PORTFOLIO GALLERY ==================== -->
+<section id="portfolio" class="py-24 lg:py-32 bg-ivory relative overflow-hidden">
+    <div class="absolute bottom-0 right-0 w-80 h-80 bg-blush/40 rounded-full blur-[100px]" aria-hidden="true"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16 fade-up">
+            <div class="luxury-divider mb-6">
+                <div class="line"></div>
+                <span class="font-cormorant text-sm text-rosegold tracking-[0.2em] uppercase">Our Work</span>
+                <div class="line" style="background: linear-gradient(to left, transparent, #B76E79)"></div>
+            </div>
+            <h2 class="font-playfair text-3xl sm:text-4xl lg:text-5xl font-semibold text-deep-black mb-4">Beauty <span class="italic text-rosegold">Portfolio</span></h2>
+            <p class="font-cormorant text-lg text-gray-500 max-w-xl mx-auto">A glimpse into the stunning bridal & party transformations we create.</p>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-3 mb-12 fade-up">
+            <button class="gallery-filter active font-poppins text-xs font-medium px-5 py-2.5 rounded-full border border-rosegold/20 transition-all duration-300 bg-rosegold text-white" data-filter="all">All</button>
+            <button class="gallery-filter font-poppins text-xs font-medium px-5 py-2.5 rounded-full border border-rosegold/20 transition-all duration-300 text-gray-500 hover:bg-blush" data-filter="bridal">Bridal</button>
+            <button class="gallery-filter font-poppins text-xs font-medium px-5 py-2.5 rounded-full border border-rosegold/20 transition-all duration-300 text-gray-500 hover:bg-blush" data-filter="party">Party</button>
+            <button class="gallery-filter font-poppins text-xs font-medium px-5 py-2.5 rounded-full border border-rosegold/20 transition-all duration-300 text-gray-500 hover:bg-blush" data-filter="hair">Hair Styling</button>
+            <button class="gallery-filter font-poppins text-xs font-medium px-5 py-2.5 rounded-full border border-rosegold/20 transition-all duration-300 text-gray-500 hover:bg-blush" data-filter="transformation">Transformations</button>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="galleryGrid">
+            <div class="gallery-item h-64 md:h-80 scale-in" data-category="bridal" onclick="openLightbox(this)">
+                <img src="https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=500&q=80" alt="Stunning Red Bridal Makeup Look" loading="lazy">
+                <div class="overlay"><div><p class="font-playfair text-white text-sm font-semibold">Red Bridal Look</p><p class="font-poppins text-white/60 text-xs">Traditional Elegance</p></div></div>
+            </div>
+            <div class="gallery-item h-48 md:h-64 scale-in" data-category="party" onclick="openLightbox(this)" style="transition-delay: 0.05s">
+                <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=500&q=80" alt="Glamorous Party Eye Makeup" loading="lazy">
+                <div class="overlay"><div><p class="font-playfair text-white text-sm font-semibold">Glam Party Eyes</p><p class="font-poppins text-white/60 text-xs">Evening Radiance</p></div></div>
+            </div>
+            <div class="gallery-item h-72 md:h-96 scale-in" data-category="bridal" onclick="openLightbox(this)" style="transition-delay: 0.1s">
+                <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=500&q=80" alt="South Indian Bridal Makeup with Gold Jewelry" loading="lazy">
+                <div class="overlay"><div><p class="font-playfair text-white text-sm font-semibold">Golden Bridal</p><p class="font-poppins text-white/60 text-xs">Intricate Artistry</p></div></div>
+            </div>
+            <div class="gallery-item h-56 md:h-72 scale-in" data-category="hair" onclick="openLightbox(this)" style="transition-delay: 0.15s">
+                <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=500&q=80" alt="Elegant Bridal Hair Styling with Flowers" loading="lazy">
+                <div class="overlay"><div><p class="font-playfair text-white text-sm font-semibold">Bridal Hair Styling</p><p class="font-poppins text-white/60 text-xs">Elegant Updo</p></div></div>
+            </div>
+            <div class="gallery-item h-56 md:h-72 scale-in" data-category="transformation" onclick="openLightbox(this)" style="transition-delay: 0.2s">
+                <img src="https://images.unsplash.com/photo-1583089892943-e02e5b017b6a?w=500&q=80" alt="Bridal Makeup Transformation Close-up" loading="lazy">
+                <div class="overlay"><div><p class="font-playfair text-white text-sm font-semibold">Transformation</p><p class="font-poppins text-white/60 text-xs">Before & After</p></div></div>
+            </div>
+            <div class="gallery-item h-64 md:h-80 scale-in" data-category="party" onclick="openLightbox(this)" style="transition-delay: 0.25s">
+                <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=500&q=80" alt="Glamorous Party Makeup with Smokey Eyes" loading="lazy">
+                <div class="overlay"><div><p class="font-playfair text-white text-sm font-semibold">Glam Party</p><p class="font-poppins text-white/60 text-xs">Smokey Eyes</p></div></div>
+            </div>
+            <div class="gallery-item h-48 md:h-64 scale-in" data-category="bridal" onclick="openLightbox(this)" style="transition-delay: 0.3s">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=500&q=80" alt="Soft Dewy Bridal Makeup Look" loading="lazy">
+                <div class="overlay"><div><p class="font-playfair text-white text-sm font-semibold">Soft Bridal</p><p class="font-poppins text-white/60 text-xs">Dewy Finish</p></div></div>
+            </div>
+            <div class="gallery-item h-72 md:h-96 scale-in" data-category="hair" onclick="openLightbox(this)" style="transition-delay: 0.35s">
+                <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500&q=80" alt="Bridal Hair Braid and Accessory Styling" loading="lazy">
+                <div class="overlay"><div><p class="font-playfair text-white text-sm font-semibold">Bridal Hair</p><p class="font-poppins text-white/60 text-xs">Traditional Braid</p></div></div>
+            </div>
+            <div class="gallery-item h-64 md:h-80 scale-in" data-category="transformation" onclick="openLightbox(this)" style="transition-delay: 0.4s">
+                <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=500&q=80" alt="Complete Makeup Transformation Reveal" loading="lazy">
+                <div class="overlay"><div><p class="font-playfair text-white text-sm font-semibold">Glow Up</p><p class="font-poppins text-white/60 text-xs">Complete Makeover</p></div></div>
+            </div>
+            <div class="gallery-item h-48 md:h-64 scale-in" data-category="party" onclick="openLightbox(this)" style="transition-delay: 0.45s">
+                <img src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=500&q=80" alt="Minimal Elegant Party Makeup" loading="lazy">
+                <div class="overlay"><div><p class="font-playfair text-white text-sm font-semibold">Minimal Glam</p><p class="font-poppins text-white/60 text-xs">Subtle Elegance</p></div></div>
+            </div>
+            <div class="gallery-item h-56 md:h-72 scale-in" data-category="bridal" onclick="openLightbox(this)" style="transition-delay: 0.5s">
+                <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=500&q=80" alt="Royal Bridal Portrait with Dupatta" loading="lazy">
+                <div class="overlay"><div><p class="font-playfair text-white text-sm font-semibold">Royal Bridal</p><p class="font-poppins text-white/60 text-xs">Regal Beauty</p></div></div>
+            </div>
+            <div class="gallery-item h-64 md:h-80 scale-in" data-category="transformation" onclick="openLightbox(this)" style="transition-delay: 0.55s">
+                <img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=500&q=80" alt="Beauty Makeover Reveal Moment" loading="lazy">
+                <div class="overlay"><div><p class="font-playfair text-white text-sm font-semibold">The Reveal</p><p class="font-poppins text-white/60 text-xs">Magical Moment</p></div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <button class="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-all z-10" onclick="closeLightbox(event)" aria-label="Close lightbox"><iconify-icon icon="lucide:x" width="24"></iconify-icon></button>
+    <button class="absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-all z-10" onclick="navigateLightbox(-1, event)" aria-label="Previous image"><iconify-icon icon="lucide:chevron-left" width="24"></iconify-icon></button>
+    <button class="absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-all z-10" onclick="navigateLightbox(1, event)" aria-label="Next image"><iconify-icon icon="lucide:chevron-right" width="24"></iconify-icon></button>
+    <img id="lightboxImg" src="" alt="Gallery Image">
+</div>
+
+<!-- ==================== PARALLAX CTA ==================== -->
+<section class="parallax-section relative py-32" style="background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&q=80')">
+    <div class="absolute inset-0 bg-black/60"></div>
+    <div class="relative z-10 text-center px-4 max-w-3xl mx-auto fade-up">
+        <div class="luxury-divider mb-6">
+            <div class="line" style="background: linear-gradient(to right, transparent, rgba(230,199,139,0.5))"></div>
+            <iconify-icon icon="lucide:sparkles" width="18" class="text-champagne"></iconify-icon>
+            <div class="line" style="background: linear-gradient(to left, transparent, rgba(230,199,139,0.5))"></div>
+        </div>
+        <h2 class="font-playfair text-3xl sm:text-4xl lg:text-5xl font-semibold text-white mb-6 leading-tight">Ready to Look <span class="italic text-champagne">Absolutely Stunning?</span></h2>
+        <p class="font-cormorant text-lg text-white/70 mb-8 max-w-xl mx-auto">Let us create a look that will leave everyone mesmerized. Your special day deserves nothing less than perfection.</p>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="#booking" class="btn-champagne"><iconify-icon icon="lucide:calendar" width="16"></iconify-icon> Book Your Slot</a>
+            <a href="https://wa.me/919984151516?text=Hi%20Sunita%20ji%2C%20I%20want%20to%20know%20about%20your%20makeup%20packages" target="_blank" class="btn-luxury"><iconify-icon icon="lucide:message-circle" width="16"></iconify-icon> Chat on WhatsApp</a>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== TESTIMONIALS ==================== -->
+<section id="testimonials" class="py-24 lg:py-32 bg-blush-light relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-96 h-96 bg-champagne/10 rounded-full blur-[100px] -translate-y-1/2 -translate-x-1/2" aria-hidden="true"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16 fade-up">
+            <div class="luxury-divider mb-6">
+                <div class="line"></div>
+                <span class="font-cormorant text-sm text-rosegold tracking-[0.2em] uppercase">Client Love</span>
+                <div class="line" style="background: linear-gradient(to left, transparent, #B76E79)"></div>
+            </div>
+            <h2 class="font-playfair text-3xl sm:text-4xl lg:text-5xl font-semibold text-deep-black mb-4"><span class="italic text-rosegold">104+</span> Happy Clients</h2>
+            <p class="font-cormorant text-lg text-gray-500 max-w-xl mx-auto">Hear what our beautiful clients have to say about their experience.</p>
+        </div>
+        <div class="relative max-w-4xl mx-auto">
+            <div class="overflow-hidden rounded-2xl">
+                <div class="testimonial-track" id="testimonialTrack">
+                    <div class="w-full flex-shrink-0 px-2">
+                        <div class="glass rounded-2xl p-8 md:p-12 text-center">
+                            <div class="flex justify-center gap-1 mb-6">
+                                <iconify-icon icon="lucide:star" width="18" class="text-champagne"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="18" class="text-champagne"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="18" class="text-champagne"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="18" class="text-champagne"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="18" class="text-champagne"></iconify-icon>
+                            </div>
+                            <iconify-icon icon="lucide:quote" width="32" class="text-rosegold/20 mb-4"></iconify-icon>
+                            <p class="font-cormorant text-lg md:text-xl text-soft-black leading-relaxed mb-8 italic">"Sunita ji made my wedding day absolutely magical! The makeup lasted the entire day and night, and I received so many compliments. She understood exactly what I wanted and delivered beyond my expectations. Best makeup artist in Mauranipur!"</p>
+                            <div class="flex items-center justify-center gap-3">
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-rosegold to-champagne flex items-center justify-center text-white font-playfair font-semibold">P</div>
+                                <div class="text-left"><div class="font-playfair font-semibold text-deep-black">Priya Sharma</div><div class="font-poppins text-xs text-gray-500">Bridal Makeup Client</div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full flex-shrink-0 px-2">
+                        <div class="glass rounded-2xl p-8 md:p-12 text-center">
+                            <div class="flex justify-center gap-1 mb-6">
+                                <iconify-icon icon="lucide:star" width="18" class="text-champagne"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="18" class="text-champagne"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="18" class="text-champagne"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="18" class="text-champagne"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="18" class="text-champagne"></iconify-icon>
+                            </div>
+                            <iconify-icon icon="lucide:quote" width="32" class="text-rosegold/20 mb-4"></iconify-icon>
+                            <p class="font-cormorant text-lg md:text-xl text-soft-black leading-relaxed mb-8 italic">"I went for my engagement makeup and it was flawless! Sunita ji is so talented and patient. She used premium products and the finish was absolutely HD perfect. Highly recommend Soumya's Makeover for any occasion!"</p>
+                            <div class="flex items-center justify-center gap-3">
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-champagne to-rosegold flex items-center justify-center text-white font-playfair font-semibold">A</div>
+                                <div class="text-left"><div class="font-playfair font-semibold text-deep-black">Anjali Gupta</div><div class="font-poppins text-xs text-gray-500">Engagement Makeup Client</div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full flex-shrink-0 px-2">
+                        <div class="glass rounded-2xl p-8 md:p-12 text-center">
+                            <div class="flex justify-center gap-1 mb-6">
+                                <iconify-icon icon="lucide:star" width="18" class="text-champagne"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="18" class="text-champagne"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="18" class="text-champagne"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="18" class="text-champagne"></iconify-icon>
+                                <iconify-icon icon="lucide:star-half" width="18" class="text-champagne"></iconify-icon>
+                            </div>
+                            <iconify-icon icon="lucide:quote" width="32" class="text-rosegold/20 mb-4"></iconify-icon>
+                            <p class="font-cormorant text-lg md:text-xl text-soft-black leading-relaxed mb-8 italic">"Amazing party makeup experience! Sunita ji knows the latest trends and gives the best suggestions. The studio is clean and hygienic, and the prices are very reasonable for the quality you get. Will definitely come back!"</p>
+                            <div class="flex items-center justify-center gap-3">
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-rosegold to-champagne flex items-center justify-center text-white font-playfair font-semibold">R</div>
+                                <div class="text-left"><div class="font-playfair font-semibold text-deep-black">Ritu Verma</div><div class="font-poppins text-xs text-gray-500">Party Makeup Client</div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full flex-shrink-0 px-2">
+                        <div class="glass rounded-2xl p-8 md:p-12 text-center">
+                            <div class="flex justify-center gap-1 mb-6">
+                                <iconify-icon icon="lucide:star" width="18" class="text-champagne"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="18" class="text-champagne"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="18" class="text-champagne"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="18" class="text-champagne"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="18" class="text-champagne"></iconify-icon>
+                            </div>
+                            <iconify-icon icon="lucide:quote" width="32" class="text-rosegold/20 mb-4"></iconify-icon>
+                            <p class="font-cormorant text-lg md:text-xl text-soft-black leading-relaxed mb-8 italic">"Sunita ji did my sister's complete bridal package — makeup, hair styling, and saree draping. Everything was picture-perfect! Her attention to detail is incredible. The whole family was so impressed. Thank you for making my sister's day special!"</p>
+                            <div class="flex items-center justify-center gap-3">
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-champagne to-rosegold flex items-center justify-center text-white font-playfair font-semibold">S</div>
+                                <div class="text-left"><div class="font-playfair font-semibold text-deep-black">Sneha Patel</div><div class="font-poppins text-xs text-gray-500">Bridal Package Client</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center justify-center gap-4 mt-8">
+                <button id="prevTest" class="w-12 h-12 rounded-full border border-rosegold/20 flex items-center justify-center text-rosegold hover:bg-rosegold hover:text-white transition-all" aria-label="Previous testimonial"><iconify-icon icon="lucide:chevron-left" width="20"></iconify-icon></button>
+                <div class="flex gap-2" id="testDots"></div>
+                <button id="nextTest" class="w-12 h-12 rounded-full border border-rosegold/20 flex items-center justify-center text-rosegold hover:bg-rosegold hover:text-white transition-all" aria-label="Next testimonial"><iconify-icon icon="lucide:chevron-right" width="20"></iconify-icon></button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== STATISTICS ==================== -->
+<section class="py-20 bg-deep-black relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23B76E79\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')" aria-hidden="true"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="text-center fade-up" style="transition-delay: 0.05s">
+                <div class="font-playfair text-4xl sm:text-5xl lg:text-6xl font-semibold text-champagne counter-glow mb-2"><span class="counter" data-target="104">0</span>+</div>
+                <div class="font-poppins text-xs text-white/50 tracking-wider uppercase">Google Reviews</div>
+            </div>
+            <div class="text-center fade-up" style="transition-delay: 0.15s">
+                <div class="font-playfair text-4xl sm:text-5xl lg:text-6xl font-semibold text-rosegold counter-glow mb-2"><span class="counter" data-target="500">0</span>+</div>
+                <div class="font-poppins text-xs text-white/50 tracking-wider uppercase">Happy Clients</div>
+            </div>
+            <div class="text-center fade-up" style="transition-delay: 0.25s">
+                <div class="font-playfair text-4xl sm:text-5xl lg:text-6xl font-semibold text-champagne counter-glow mb-2"><span class="counter-decimal" data-target="4.7">0</span></div>
+                <div class="font-poppins text-xs text-white/50 tracking-wider uppercase">Star Rating</div>
+            </div>
+            <div class="text-center fade-up" style="transition-delay: 0.35s">
+                <div class="font-playfair text-4xl sm:text-5xl lg:text-6xl font-semibold text-rosegold counter-glow mb-2">∞</div>
+                <div class="font-poppins text-xs text-white/50 tracking-wider uppercase">Beautiful Transformations</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== BOOKING SECTION ==================== -->
+<section id="booking" class="py-24 lg:py-32 bg-ivory relative overflow-hidden">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-blush/40 rounded-full blur-[120px]" aria-hidden="true"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20">
+            <div class="fade-left">
+                <div class="luxury-divider mb-6 justify-start">
+                    <div class="line"></div>
+                    <span class="font-cormorant text-sm text-rosegold tracking-[0.2em] uppercase">Book Now</span>
+                    <div class="line" style="background: linear-gradient(to left, transparent, #B76E79)"></div>
+                </div>
+                <h2 class="font-playfair text-3xl sm:text-4xl lg:text-5xl font-semibold text-deep-black leading-tight mb-6">Book Your <span class="italic text-rosegold">Appointment</span></h2>
+                <p class="font-poppins text-sm text-gray-600 leading-relaxed mb-8">Ready to transform your look? Fill out the form and we'll get back to you within minutes. For urgent bookings, call us directly or WhatsApp us.</p>
+                <div class="space-y-4 mb-8">
+                    <a href="tel:+919984151516" class="flex items-center gap-4 glass rounded-xl p-4 hover:shadow-lg transition-all group">
+                        <div class="w-12 h-12 rounded-full bg-blush flex items-center justify-center text-rosegold group-hover:bg-rosegold group-hover:text-white transition-all"><iconify-icon icon="lucide:phone" width="20"></iconify-icon></div>
+                        <div><div class="font-poppins text-xs text-gray-500">Call Us Directly</div><div class="font-poppins text-sm font-medium text-deep-black">+91 99841 51516</div></div>
+                    </a>
+                    <a href="https://wa.me/919984151516?text=Hi%20Sunita%20ji%2C%20I%20want%20to%20book%20a%20makeup%20appointment" target="_blank" class="flex items-center gap-4 glass rounded-xl p-4 hover:shadow-lg transition-all group">
+                        <div class="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center text-green-600 group-hover:bg-green-500 group-hover:text-white transition-all"><iconify-icon icon="lucide:message-circle" width="20"></iconify-icon></div>
+                        <div><div class="font-poppins text-xs text-gray-500">WhatsApp Us</div><div class="font-poppins text-sm font-medium text-deep-black">Quick Response Guaranteed</div></div>
+                    </a>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <div class="flex items-center gap-2 bg-blush/60 rounded-full px-4 py-2"><iconify-icon icon="lucide:shield-check" width="14" class="text-rosegold"></iconify-icon><span class="font-poppins text-xs text-gray-600">Verified Business</span></div>
+                    <div class="flex items-center gap-2 bg-blush/60 rounded-full px-4 py-2"><iconify-icon icon="lucide:star" width="14" class="text-champagne"></iconify-icon><span class="font-poppins text-xs text-gray-600">4.7 Rated</span></div>
+                    <div class="flex items-center gap-2 bg-blush/60 rounded-full px-4 py-2"><iconify-icon icon="lucide:heart" width="14" class="text-rosegold"></iconify-icon><span class="font-poppins text-xs text-gray-600">500+ Happy Clients</span></div>
+                </div>
+            </div>
+            <div class="fade-right">
+                <form id="bookingForm" class="glass rounded-2xl p-6 md:p-8 shadow-xl">
+                    <div class="space-y-5">
+                        <div><label class="font-poppins text-xs font-medium text-gray-600 mb-2 block">Your Name *</label><input type="text" name="name" required class="form-input" placeholder="Enter your full name"></div>
+                        <div><label class="font-poppins text-xs font-medium text-gray-600 mb-2 block">Phone Number *</label><input type="tel" name="phone" required class="form-input" placeholder="+91 XXXXX XXXXX"></div>
+                        <div><label class="font-poppins text-xs font-medium text-gray-600 mb-2 block">Select Service *</label>
+                            <select name="service" required class="form-input" style="appearance: none; background-image: url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724%27 height=%2724%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%23B76E79%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3E%3Cpath d=%27m6 9 6 6 6-6%27/%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 12px center; background-size: 20px;">
+                                <option value="">Choose a service</option>
+                                <option>Bridal Makeup</option><option>HD Makeup</option><option>Party Makeup</option><option>Engagement Makeup</option><option>Reception Makeup</option><option>Hair Styling</option><option>Saree Draping</option><option>Beauty Treatments</option><option>Pre-Bridal Package</option><option>Fashion Makeup</option>
+                            </select>
+                        </div>
+                        <div><label class="font-poppins text-xs font-medium text-gray-600 mb-2 block">Event Date</label><input type="date" name="date" class="form-input"></div>
+                        <div><label class="font-poppins text-xs font-medium text-gray-600 mb-2 block">Message</label><textarea name="message" rows="3" class="form-input resize-none" placeholder="Tell us about your requirements..."></textarea></div>
+                        <button type="submit" class="btn-luxury w-full justify-center py-4 text-sm"><iconify-icon icon="lucide:send" width="16"></iconify-icon> Send Booking Request</button>
+                        <p class="font-poppins text-xs text-gray-400 text-center"><iconify-icon icon="lucide:lock" width="12" class="inline"></iconify-icon> Your information is safe and will only be used for booking purposes.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== CONTACT SECTION ==================== -->
+<section id="contact" class="py-24 lg:py-32 bg-blush-light relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16 fade-up">
+            <div class="luxury-divider mb-6">
+                <div class="line"></div>
+                <span class="font-cormorant text-sm text-rosegold tracking-[0.2em] uppercase">Find Us</span>
+                <div class="line" style="background: linear-gradient(to left, transparent, #B76E79)"></div>
+            </div>
+            <h2 class="font-playfair text-3xl sm:text-4xl lg:text-5xl font-semibold text-deep-black mb-4">Visit Our <span class="italic text-rosegold">Studio</span></h2>
+            <p class="font-cormorant text-lg text-gray-500 max-w-xl mx-auto">We'd love to welcome you to our beauty studio in Mauranipur.</p>
+        </div>
+        <div class="grid lg:grid-cols-5 gap-8">
+            <div class="lg:col-span-2 space-y-6 fade-left">
+                <div class="glass rounded-2xl p-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-rosegold to-champagne flex items-center justify-center text-white font-playfair font-bold text-xl">S</div>
+                        <div><div class="font-playfair text-lg font-semibold text-deep-black">Soumya's Makeover</div><div class="font-cormorant text-sm text-rosegold">by Sunita Sahu</div></div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3"><iconify-icon icon="lucide:map-pin" width="18" class="text-rosegold mt-0.5 flex-shrink-0"></iconify-icon><p class="font-poppins text-sm text-gray-600 leading-relaxed">Soumya Beauty Parlor, Near Pooran Das Sahu Shop, Muhal-Alyai, Tikamgarh Road, Mauranipur, Uttar Pradesh 284204</p></div>
+                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:phone" width="18" class="text-rosegold flex-shrink-0"></iconify-icon><a href="tel:+919984151516" class="font-poppins text-sm text-gray-600 hover:text-rosegold transition-colors">+91 99841 51516</a></div>
+                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:locate" width="18" class="text-rosegold flex-shrink-0"></iconify-icon><p class="font-poppins text-sm text-gray-600">Plus Code: 64VP+C5 Mauranipur</p></div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <a href="tel:+919984151516" class="btn-luxury justify-center text-xs py-3 px-4"><iconify-icon icon="lucide:phone" width="14"></iconify-icon> Call Now</a>
+                    <a href="https://wa.me/919984151516" target="_blank" class="btn-champagne justify-center text-xs py-3 px-4"><iconify-icon icon="lucide:message-circle" width="14"></iconify-icon> WhatsApp</a>
+                    <a href="https://www.google.com/maps/dir//64VP%2BC5+Mauranipur,+Uttar+Pradesh" target="_blank" class="btn-outline-luxury justify-center text-xs py-3 px-4 col-span-2"><iconify-icon icon="lucide:navigation" width="14"></iconify-icon> Get Directions on Google Maps</a>
+                </div>
+                <div class="glass rounded-2xl p-6">
+                    <p class="font-poppins text-xs font-medium text-gray-500 mb-3 tracking-wider uppercase">Follow Us</p>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-11 h-11 rounded-full border border-rosegold/20 flex items-center justify-center text-rosegold hover:bg-rosegold hover:text-white hover:border-rosegold transition-all" aria-label="Instagram"><iconify-icon icon="lucide:instagram" width="18"></iconify-icon></a>
+                        <a href="#" class="w-11 h-11 rounded-full border border-rosegold/20 flex items-center justify-center text-rosegold hover:bg-rosegold hover:text-white hover:border-rosegold transition-all" aria-label="Facebook"><iconify-icon icon="lucide:facebook" width="18"></iconify-icon></a>
+                        <a href="#" class="w-11 h-11 rounded-full border border-rosegold/20 flex items-center justify-center text-rosegold hover:bg-rosegold hover:text-white hover:border-rosegold transition-all" aria-label="YouTube"><iconify-icon icon="lucide:youtube" width="18"></iconify-icon></a>
+                        <a href="#" class="w-11 h-11 rounded-full border border-rosegold/20 flex items-center justify-center text-rosegold hover:bg-rosegold hover:text-white hover:border-rosegold transition-all" aria-label="Twitter"><iconify-icon icon="lucide:twitter" width="18"></iconify-icon></a>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:col-span-3 fade-right">
+                <div class="rounded-2xl overflow-hidden shadow-xl h-full min-h-[400px] lg:min-h-[520px]">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3546.5!2d79.13!3d25.24!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39831b0a0a0a0a0b%3A0x0!2s64VP%2BC5%20Mauranipur%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0; min-height: 400px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Soumya's Makeover Location"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="bg-deep-black relative overflow-hidden">
+    <div class="h-1 bg-gradient-to-r from-transparent via-rosegold to-transparent"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+            <div class="lg:col-span-1">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-rosegold to-champagne flex items-center justify-center text-white font-playfair font-bold text-lg">S</div>
+                    <div><div class="font-playfair text-lg font-semibold text-white">Soumya's Makeover</div><div class="font-cormorant text-xs text-rosegold tracking-wider">BY SUNITA SAHU</div></div>
+                </div>
+                <p class="font-poppins text-xs text-white/40 leading-relaxed mb-6">Transforming beauty into art with premium makeup services. Your trusted beauty destination in Mauranipur.</p>
+                <div class="flex gap-3">
+                    <a href="#" class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:bg-rosegold hover:text-white hover:border-rosegold transition-all" aria-label="Instagram"><iconify-icon icon="lucide:instagram" width="14"></iconify-icon></a>
+                    <a href="#" class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:bg-rosegold hover:text-white hover:border-rosegold transition-all" aria-label="Facebook"><iconify-icon icon="lucide:facebook" width="14"></iconify-icon></a>
+                    <a href="#" class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:bg-rosegold hover:text-white hover:border-rosegold transition-all" aria-label="YouTube"><iconify-icon icon="lucide:youtube" width="14"></iconify-icon></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-playfair text-base font-semibold text-white mb-6">Quick Links</h4>
+                <ul class="space-y-3">
+                    <li><a href="#home" class="font-poppins text-xs text-white/40 hover:text-rosegold transition-colors">Home</a></li>
+                    <li><a href="#about" class="font-poppins text-xs text-white/40 hover:text-rosegold transition-colors">About Sunita Sahu</a></li>
+                    <li><a href="#services" class="font-poppins text-xs text-white/40 hover:text-rosegold transition-colors">Our Services</a></li>
+                    <li><a href="#portfolio" class="font-poppins text-xs text-white/40 hover:text-rosegold transition-colors">Portfolio Gallery</a></li>
+                    <li><a href="#testimonials" class="font-poppins text-xs text-white/40 hover:text-rosegold transition-colors">Client Reviews</a></li>
+                    <li><a href="#booking" class="font-poppins text-xs text-white/40 hover:text-rosegold transition-colors">Book Appointment</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-playfair text-base font-semibold text-white mb-6">Our Services</h4>
+                <ul class="space-y-3">
+                    <li><a href="#services" class="font-poppins text-xs text-white/40 hover:text-rosegold transition-colors">Bridal Makeup</a></li>
+                    <li><a href="#services" class="font-poppins text-xs text-white/40 hover:text-rosegold transition-colors">HD Makeup</a></li>
+                    <li><a href="#services" class="font-poppins text-xs text-white/40 hover:text-rosegold transition-colors">Party Makeup</a></li>
+                    <li><a href="#services" class="font-poppins text-xs text-white/40 hover:text-rosegold transition-colors">Engagement Makeup</a></li>
+                    <li><a href="#services" class="font-poppins text-xs text-white/40 hover:text-rosegold transition-colors">Hair Styling</a></li>
+                    <li><a href="#services" class="font-poppins text-xs text-white/40 hover:text-rosegold transition-colors">Pre-Bridal Packages</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-playfair text-base font-semibold text-white mb-6">Contact Us</h4>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3"><iconify-icon icon="lucide:map-pin" width="16" class="text-rosegold mt-0.5 flex-shrink-0"></iconify-icon><p class="font-poppins text-xs text-white/40 leading-relaxed">Soumya Beauty Parlor, Near Pooran Das Sahu Shop, Muhal-Alyai, Tikamgarh Road, Mauranipur, UP 284204</p></li>
+                    <li class="flex items-center gap-3"><iconify-icon icon="lucide:phone" width="16" class="text-rosegold flex-shrink-0"></iconify-icon><a href="tel:+919984151516" class="font-poppins text-xs text-white/40 hover:text-rosegold transition-colors">+91 99841 51516</a></li>
+                    <li class="flex items-center gap-3"><iconify-icon icon="lucide:clock" width="16" class="text-rosegold flex-shrink-0"></iconify-icon><p class="font-poppins text-xs text-white/40">Mon - Sat: 9:00 AM - 8:00 PM</p></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="font-poppins text-xs text-white/30 text-center md:text-left">© 2025 Soumya's Makeover by Sunita Sahu. All rights reserved.</p>
+            <div class="flex items-center gap-2"><span class="font-poppins text-xs text-white/30">Made with</span><iconify-icon icon="lucide:heart" width="12" class="text-rosegold"></iconify-icon><span class="font-poppins text-xs text-white/30">in Mauranipur</span></div>
+        </div>
+    </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/919984151516?text=Hi%20Sunita%20ji%2C%20I%20want%20to%20know%20about%20your%20makeup%20services" target="_blank" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 group" aria-label="Chat on WhatsApp">
+    <iconify-icon icon="lucide:message-circle" width="26"></iconify-icon>
+    <span class="absolute right-full mr-3 bg-white text-deep-black font-poppins text-xs font-medium px-3 py-2 rounded-lg shadow-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">Chat with us!</span>
+    <span class="absolute -top-1 -right-1 w-4 h-4 bg-rosegold rounded-full animate-ping" aria-hidden="true"></span>
+    <span class="absolute -top-1 -right-1 w-4 h-4 bg-rosegold rounded-full" aria-hidden="true"></span>
+</a>
+
+<!-- Floating Call (Mobile) -->
+<a href="tel:+919984151516" class="fixed bottom-6 left-6 z-50 w-14 h-14 bg-rosegold rounded-full flex items-center justify-center text-white shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 lg:hidden" aria-label="Call Now">
+    <iconify-icon icon="lucide:phone" width="24"></iconify-icon>
+</a>
+
+<div id="toast" class="toast"></div>
+
+<script>
+// Particles
+function createParticles(){const c=document.getElementById('particles');const colors=['#B76E79','#E6C78B','#F9E4E8','#D4949C'];for(let i=0;i<20;i++){const p=document.createElement('div');p.className='particle';const s=Math.random()*4+2;p.style.width=s+'px';p.style.height=s+'px';p.style.background=colors[Math.floor(Math.random()*colors.length)];p.style.left=Math.random()*100+'%';p.style.bottom='-10px';p.style.animationDuration=(Math.random()*15+10)+'s';p.style.animationDelay=(Math.random()*10)+'s';p.style.opacity=Math.random()*0.5+0.1;c.appendChild(p)}}createParticles();
+
+// Navbar
+const navbar=document.getElementById('navbar');window.addEventListener('scroll',()=>{if(window.scrollY>80){navbar.classList.add('glass');navbar.style.boxShadow='0 4px 30px rgba(183,110,121,0.1)'}else{navbar.classList.remove('glass');navbar.style.boxShadow='none'}});
+
+// Mobile Menu
+const menuBtn=document.getElementById('menuBtn'),closeMenuBtn=document.getElementById('closeMenu'),mobileMenu=document.getElementById('mobileMenu'),menuOverlay=document.getElementById('menuOverlay');
+function openMenu(){mobileMenu.classList.add('open');menuOverlay.classList.remove('hidden');setTimeout(()=>menuOverlay.style.opacity='1',10);document.body.style.overflow='hidden'}
+function closeMenu(){mobileMenu.classList.remove('open');menuOverlay.style.opacity='0';setTimeout(()=>menuOverlay.classList.add('hidden'),300);document.body.style.overflow=''}
+menuBtn.addEventListener('click',openMenu);closeMenuBtn.addEventListener('click',closeMenu);menuOverlay.addEventListener('click',closeMenu);
+document.querySelectorAll('.mobile-link').forEach(l=>l.addEventListener('click',closeMenu));
+
+// Scroll Animations
+const obs=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')})},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.fade-up,.fade-left,.fade-right,.scale-in').forEach(el=>obs.observe(el));
+
+// Counters
+let countersStarted=false;
+const cObs=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting&&!countersStarted){countersStarted=true;startCounters()}})},{threshold:0.3});
+document.querySelectorAll('.counter').forEach(el=>cObs.observe(el));
+function startCounters(){document.querySelectorAll('.counter').forEach(c=>{const t=parseInt(c.dataset.target);const s=t/125;let cur=0;const timer=setInterval(()=>{cur+=s;if(cur>=t){c.textContent=t;clearInterval(timer)}else c.textContent=Math.floor(cur)},16)});document.querySelectorAll('.counter-decimal').forEach(c=>{const t=parseFloat(c.dataset.target);const s=t/125;let cur=0;const timer=setInterval(()=>{cur+=s;if(cur>=t){c.textContent=t.toFixed(1);clearInterval(timer)}else c.textContent=cur.toFixed(1)},16)})}
+
+// Gallery Filter
+const filterBtns=document.querySelectorAll('.gallery-filter'),galleryItems=document.querySelectorAll('.gallery-item');
+filterBtns.forEach(btn=>{btn.addEventListener('click',()=>{filterBtns.forEach(b=>{b.classList.remove('bg-rosegold','text-white');b.classList.add('text-gray-500')});btn.classList.add('bg-rosegold','text-white');btn.classList.remove('text-gray-500');const f=btn.dataset.filter;galleryItems.forEach(item=>{if(f==='all'||item.dataset.category===f){item.style.display='block';setTimeout(()=>{item.style.opacity='1';item.style.transform='scale(1)'},50)}else{item.style.opacity='0';item.style.transform='scale(0.8)';setTimeout(()=>{item.style.display='none'},300)}})})});
+
+// Lightbox
+let currentLI=0,visibleImgs=[];
+function openLightbox(el){visibleImgs=Array.from(document.querySelectorAll('.gallery-item')).filter(i=>i.style.display!=='none');currentLI=visibleImgs.indexOf(el);const img=el.querySelector('img');const lb=document.getElementById('lightbox');document.getElementById('lightboxImg').src=img.src;document.getElementById('lightboxImg').alt=img.alt;lb.style.display='flex';setTimeout(()=>lb.style.opacity='1',10);document.body.style.overflow='hidden'}
+function closeLightbox(e){if(e.target===document.getElementById('lightbox')||e.currentTarget.tagName==='BUTTON'){const lb=document.getElementById('lightbox');lb.style.opacity='0';setTimeout(()=>{lb.style.display='none'},400);document.body.style.overflow=''}}
+function navigateLightbox(d,e){e.stopPropagation();currentLI=(currentLI+d+visibleImgs.length)%visibleImgs.length;const img=visibleImgs[currentLI].querySelector('img');const lbImg=document.getElementById('lightboxImg');lbImg.style.opacity='0';setTimeout(()=>{lbImg.src=img.src;lbImg.alt=img.alt;lbImg.style.opacity='1'},200)}
+document.addEventListener('keydown',e=>{const lb=document.getElementById('lightbox');if(lb.style.display==='flex'){if(e.key==='Escape')closeLightbox({target:lb});if(e.key==='ArrowLeft')navigateLightbox(-1,{stopPropagation:()=>{}});if(e.key==='ArrowRight')navigateLightbox(1,{stopPropagation:()=>{}})}});
+
+// Testimonials
+const track=document.getElementById('testimonialTrack'),dotsC=document.getElementById('testDots');let curTest=0;const totalT=track.children.length;
+for(let i=0;i<totalT;i++){const d=document.createElement('button');d.className=`w-2.5 h-2.5 rounded-full transition-all duration-300 ${i===0?'bg-rosegold w-8':'bg-rosegold/30'}`;d.setAttribute('aria-label',`Testimonial ${i+1}`);d.addEventListener('click',()=>goToTest(i));dotsC.appendChild(d)}
+function goToTest(i){curTest=i;track.style.transform=`translateX(-${curTest*100}%)`;dotsC.querySelectorAll('button').forEach((d,j)=>{d.className=j===curTest?'w-8 h-2.5 rounded-full bg-rosegold transition-all duration-300':'w-2.5 h-2.5 rounded-full bg-rosegold/30 transition-all duration-300'})}
+document.getElementById('prevTest').addEventListener('click',()=>goToTest((curTest-1+totalT)%totalT));
+document.getElementById('nextTest').addEventListener('click',()=>goToTest((curTest+1)%totalT));
+let autoPlay=setInterval(()=>goToTest((curTest+1)%totalT),5000);
+track.parentElement.addEventListener('mouseenter',()=>clearInterval(autoPlay));
+track.parentElement.addEventListener('mouseleave',()=>{autoPlay=setInterval(()=>goToTest((curTest+1)%totalT),5000)});
+
+// Booking Form
+document.getElementById('bookingForm').addEventListener('submit',function(e){e.preventDefault();const fd=new FormData(this);let m=`📝 *New Booking Request*%0A%0A`;m+=`👤 *Name:* ${encodeURIComponent(fd.get('name'))}%0A`;m+=`📱 *Phone:* ${encodeURIComponent(fd.get('phone'))}%0A`;m+=`💄 *Service:* ${encodeURIComponent(fd.get('service'))}%0A`;if(fd.get('date'))m+=`📅 *Date:* ${encodeURIComponent(fd.get('date'))}%0A`;if(fd.get('message'))m+=`💬 *Message:* ${encodeURIComponent(fd.get('message'))}%0A`;m+=`%0A_Sent from Soumya's Makeover Website_`;showToast('Booking request sent! Redirecting to WhatsApp...','success');setTimeout(()=>{window.open(`https://wa.me/919984151516?text=${m}`,'_blank')},1500);this.reset()});
+
+// Toast
+function showToast(msg,type='success'){const t=document.getElementById('toast');t.textContent=msg;t.className=`toast ${type} show`;setTimeout(()=>t.classList.remove('show'),4000)}
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){e.preventDefault();const t=document.querySelector(this.getAttribute('href'));if(t){const p=t.getBoundingClientRect().top+window.scrollY-80;window.scrollTo({top:p,behavior:'smooth'})}})});
+
+// Active nav
+const sections=document.querySelectorAll('section[id]');window.addEventListener('scroll',()=>{let cur='';sections.forEach(s=>{if(window.scrollY>=s.offsetTop-120)cur=s.id});document.querySelectorAll('.nav-link').forEach(l=>{l.classList.remove('active','text-rosegold');if(l.getAttribute('href')===`#${cur}`)l.classList.add('active','text-rosegold')})});
+</script>
+</body>
+</html>
